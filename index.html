@@ -13,7 +13,10 @@
         <a-scene embedded arjs="debugUIEnabled:false; sourceType: webcam;">
             <!-- marker -->
             <a-marker preset="custom" type='pattern' url="markers/black_cat.patt">
-              <a-cube></a-cube>
+                <a-box position="0 0.6 0"></a-box>
+
+        <a-plane position="0 0.6 0.51" material="shader:html;target:#target;fps:24;width:640;height:640"></a-plane>
+    
             </a-marker>
 
             <a-entity camera></a-entity>
