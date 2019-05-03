@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <head>
   <!-- ① スクリプトの読み込み -->
-  <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
   <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
 </head>
 <body style='margin: 0; overflow: hidden;'>
 
 <!-- シーンの追加とデバックUIを非表示 -->
-<a-scene embedded arjs="debugUIEnabled:false;patternRatio=0.90;" vr-mode-ui="enabled: false">
+<a-scene embedded arjs="debugUIEnabled:false; " vr-mode-ui="enabled: false"> <!-- patternRatio=0.90; -->
   <a-assets>
     <!-- 画像をプリロード -->
     <img id="kinga_sinnen" src="markers/img/black_cat.jpg">
