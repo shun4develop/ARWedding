@@ -30,8 +30,9 @@
   </a-marker>
 
   <a-marker preset="custom" type="pattern" url="markers/wedding.patt">
-    <!--<a-video src="#movie1"></a-video>-->
-    <a-plane src="#movie1" height="100" width="100" rotation="-90 0 0"></a-plane>
+    <a-video src="#movie1">
+      <a-animation attribute="rotation" from="0 0 0" to="0 360 0" repeat="indefinite" easing="linear"></a-animation>
+    </a-video>
   </a-marker>
 
   <!-- カメラオブジェクトの配置 -->
