@@ -31,3 +31,6 @@ function render() {
 }
 
 render();
+
+var vid = document.getElementById('movie1');
+vid.play();
