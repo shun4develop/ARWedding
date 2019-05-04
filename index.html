@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <!-- A-Frame ライブラリの読み込み -->
     <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
     <!-- AR.js ライブラリの読み込み -->
@@ -13,7 +14,7 @@
   <a-assets>
     <!-- 画像をプリロード -->
     <img id="cat" src="markers/img/black_cat.jpg">
-    <video id="movie1" autoplay loop="true" src="resouces/movie1.mp4"></video>
+    <video id="movie1" autoplay playsinline loop="true" src="resouces/movie1.mp4"></video>
   </a-assets>
   
   <!-- a-markerのtypeにpatternを設定, 作ったpattファイルをurlにを指定 -->
