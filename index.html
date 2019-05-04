@@ -13,7 +13,7 @@
   <a-assets>
     <!-- 画像をプリロード -->
     <img id="cat" src="markers/img/black_cat.jpg">
-    <video id="movie1" playsinline muted="true" rotation="0 90 0" loop="true" src="resouces/movie1.mp4"></video>
+    <video id="movie1" playsinline muted="true" loop="true" src="resouces/movie1.mp4"></video>
   </a-assets>
   
   <!-- a-markerのtypeにpatternを設定, 作ったpattファイルをurlにを指定 -->
@@ -30,7 +30,7 @@
   </a-marker>
 
   <a-marker preset="custom" type="pattern" url="markers/wedding.patt">
-    <a-video src="#movie1"></a-video>
+    <a-video src="#movie1" rotation="30 30 30" ></a-video>
   </a-marker>
 
   <!-- カメラオブジェクトの配置 -->
