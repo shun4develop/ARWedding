@@ -10,11 +10,11 @@
 <body style='margin: 0; overflow: hidden;'>
 
 <!-- シーンの追加とデバックUIを非表示 -->
-<a-scene embedded arjs="debugUIEnabled:false;"> 
+<a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false"> 
   <a-assets>
     <!-- 画像をプリロード -->
     <img id="cat" src="markers/img/black_cat.jpg">
-    <video id="movie1" autoplay playsinline loop="true" src="resouces/movie1.mp4"></video>
+    <video id="movie1" autoplay loop="true" src="resouces/movie1.mp4"></video>
   </a-assets>
   
   <!-- a-markerのtypeにpatternを設定, 作ったpattファイルをurlにを指定 -->
