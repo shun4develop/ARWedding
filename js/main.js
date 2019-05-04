@@ -1,3 +1,4 @@
+/*
 AFRAME.registerComponent('registerevents', {
         init: function () {
             var marker = this.el;
@@ -21,3 +22,12 @@ AFRAME.registerComponent('registerevents', {
             });
         }
     });
+*/
+function render() {
+    //t += 0.01;
+    requestAnimationFrame(render);
+    //cylinder.setAttribute('position', '0 '+(Math.sin(t*2)+1)+' 0');
+    console.log("test");
+}
+
+render();
