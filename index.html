@@ -13,6 +13,7 @@
   <a-assets>
     <!-- 画像をプリロード -->
     <img id="cat" src="markers/img/black_cat.jpg">
+    <video id="movie" autoplay loop="true" src="resouces/コブクロ - 流星.mp4">
   </a-assets>
   
   <!-- a-markerのtypeにpatternを設定, 作ったpattファイルをurlにを指定 -->
@@ -29,7 +30,7 @@
   </a-marker>
 
   <a-marker preset="custom" type="pattern" url="markers/wedding.patt">
-    <a-box position="0 0 0" width="0.5" height="0.5" depth="0.5" color="red"></a-box>
+    <a-video src="#movie"></a-video>
   </a-marker>
 
 
