@@ -33,4 +33,7 @@ function render() {
 render();
 
 var vid = document.getElementById('movie1');
+vid.muted = true;
+vid.playsinline = true;
+vid.srcObject = stream;
 vid.play();
