@@ -14,7 +14,7 @@
     <!-- 画像をプリロード -->
     <img id="cat" src="markers/img/black_cat.jpg">
     <img id="wedding" src="markers/img/wedding.jpg">
-    <video id="movie1" playsinline muted="true" loop="true" src="resouces/movie1.mp4"></video>
+    <video id="movie1" playsinline muted="true" loop="true" src="resouces/wedding.mp4"></video>
   </a-assets>
   
   <!-- a-markerのtypeにpatternを設定, 作ったpattファイルをurlにを指定 -->
@@ -34,7 +34,14 @@
     <a-image src="#wedding" height="1.1" width="1.1" rotation="-90 0 0"></a-image>
     <a-entity>
       <a-video src="#movie1" rotation="-90 0 0" position="0 -0.1 0"></a-video>
-      <a-animation attribute="position" from="0 0 0" to="0 0 1.2" begin="2" dur="4000"  easing="linear"></a-animation>
+      <a-animation  attribute="position" 
+                    fill="forwards" 
+                    from="0 0 0" 
+                    to="0 0 1.2" 
+                    begin="2" 
+                    dur="4000"  
+                    easing="linear">
+      </a-animation>
     </a-entity>
   </a-marker>
 

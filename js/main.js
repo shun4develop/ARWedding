@@ -23,14 +23,13 @@ AFRAME.registerComponent('registerevents', {
         }
     });
 */
+
 function render() {
     //t += 0.01;
-    requestAnimationFrame(render);
     //cylinder.setAttribute('position', '0 '+(Math.sin(t*2)+1)+' 0');
-    console.log("test");
 }
 
-render();
+requestAnimationFrame(render);
 
 var vid = document.getElementById('movie1');
 vid.play();
