@@ -1,5 +1,5 @@
 
-let scene = document.querySelector('a-scene');
+let scene = document.querySelector('#a-scene');
 let objectContainer = document.querySelector('#object-container');
 
 // random num generator
