@@ -22,17 +22,10 @@
   <!-- a-markerのtypeにpatternを設定, 作ったpattファイルをurlにを指定 -->
   <a-marker preset="custom" type="pattern" url="markers/black_cat.patt">
     <!--<a-entity id="object-container" position="0 1.6 -2" scale=".4 .4 .4"></a-entity>-->
-    <a-entity>
       <a-cube width="1.5" height="3.0" depth="0.5" color="red">
-        <a-animation attribute="rotation" 
-                      from="0 0 0" 
-                      to="0 360 0" 
-                      dur="4000"  
-                      easing="ease-in-out">
-        </a-animation>
+        
       </a-cube>
-    </a-entity>
-  </a-marker>
+    </a-marker>
 
   <a-marker preset="custom" type="pattern" url="markers/wedding.patt">
     <a-image src="#wedding" rotation="-90 0 0"></a-image>
