@@ -20,9 +20,11 @@
   </a-assets>
   
   <!-- a-markerのtypeにpatternを設定, 作ったpattファイルをurlにを指定 -->
-  <a-marker preset="custom" type="pattern" url="markers/black_cat.patt">
-    <!--<a-entity id="object-container" position="0 1.6 -2" scale=".4 .4 .4"></a-entity>-->
-    <a-cube width="1.5" height="3.0" depth="0.5" color="red"></a-cube>
+  <a-marker preset="custom" type="pattern" url="markers/black_cat.patt">    
+    <!-- 赤い立方体を表示 -->
+    <a-box position="0 0 0" width="0.5" height="0.5" depth="0.5" color="blue">
+      <a-animation attribute="rotation" to="0 360 0" dur="4000" repeat="indefinite" easing="linear"></a-animation>
+    </a-box>
   </a-marker>
 
   <a-marker preset="custom" type="pattern" url="markers/wedding.patt">
