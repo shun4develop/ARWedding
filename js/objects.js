@@ -1,4 +1,3 @@
-
 let scene = document.querySelector('#a-scene');
 let objectContainer = document.querySelector('#object-container');
 
@@ -21,6 +20,7 @@ function getRandomColor() {
 let totalRingElements = 10;
 
 function generateAllElements() {
+
 
   for(let a = 0; a < totalRingElements; a++){
 
