@@ -1,4 +1,4 @@
-import * as Entity from './AFEntitys/Entity.js';
+import Entity from './AFEntitys/Entity.js';
 var e = new Entity.AFEntity("test");
 console.log(e.getElement());
 
