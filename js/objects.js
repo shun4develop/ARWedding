@@ -1,6 +1,6 @@
 $(window).on('load', function() {
 import Entity from './AFEntitys/Entity.js';
-var e = new Entity.AFEntity("test");
+var e = new Entity("test");
 console.log(e.getElement());  
 });
 
