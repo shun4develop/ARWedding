@@ -1,66 +1,50 @@
 //####################################################
 //A-Frameオブジェクトのスーパークラス的なやつ
 //####################################################
-class AFEntity{
-
+const AFEntity = (function(){
   const id_ = Symbol("id");
   const element_ = Symbol("element");
   const posX_ = Symbol("posX");
   const posY_ = Symbol("posY");
   const posZ_ = Symbol("posZ");
+  return class{
+    constructor(id) {
+      this[id_] = id;
+      this[element_] = document.createElement('a-entity');
+      this[element_].setAttribute("id",id);
+    }
 
-  const EntityType = {
-    box = "box",
-    circle="circle",
-    cone="cone",
-    cylinder="cylinder",
-    dodecahedron="dodecahedron",
-    octahedron="octahedron",
-    plane="plane",
-    ring="ring",
-    sphere="sphere",
-    tetrahedron="tetrahedron",
-    torus="torus",
-    torusKnot="torusKnot",
-    triangle="triangle"
-  }
+    get id(){
+      return this[id_];
+    }
+    get element(){
+      return this[element_];
+    }
 
-  constructor(id) {
-    this[id_] = id;
-    this[element_] = document.createElement('a-entity');
-    this[element_].setAttribute("id",id);
-  }
+    SetAttr(key,val){
+      this[element_].setAttribute(key, val);
+    }
 
-  get id(){
-    return this[id_];
-  }
-  get element(){
-    return this[element_];
-  }
+    SetPos(x,y,z){
+      this.SetAttr("position",x + " " + y + " " + z);
+    }
 
-  SetAttr(key,val){
-    this[element_].setAttribute(key, val);
-  }
+    GetAttr(){
+      return this[element_].getAttribute(key);
+    }
 
-  SetPos(x,y,z){
-    this.SetAttr("position",x + " " + y + " " + z);
-  }
+    GetElement(){
+      this[element_];
+    }
 
-  GetAttr(){
-    return this[element_].getAttribute(key);
+    AppendChild(){
+      this[element_].appendChild(element);
+    }
   }
+})();
 
-  GetElement(){
-    this[element_];
-  }
-
-  AppendChild(){
-    this[element_].appendChild(element);
-  }
-}
-
-var e = new AFEntity("test");
-console.log(e.getElement());  
+const e = new AFEntity("test");
+console.log(e.GetElement());  
 
 
 /*
