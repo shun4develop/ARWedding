@@ -1,6 +1,9 @@
+$(window).on('load', function() {
 import Entity from './AFEntitys/Entity.js';
 var e = new Entity.AFEntity("test");
-console.log(e.getElement());
+console.log(e.getElement());  
+});
+
 
 /*
 let scene = document.querySelector('#a-scene');
