@@ -1,3 +1,8 @@
+import * as Entity from './AFEntitys/Entity.js';
+var e = new Entity.AFEntity("test");
+console.log(e.getElement());
+
+/*
 let scene = document.querySelector('#a-scene');
 let objectContainer = document.querySelector('#object-container');
 
@@ -79,4 +84,4 @@ function generateAllElements() {
 
 }
 
-generateAllElements()
+generateAllElements()*/
