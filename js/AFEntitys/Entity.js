@@ -13,21 +13,6 @@ class AFEntity{
 		const posX_ = Symbol("posX");
 		const posY_ = Symbol("posY");
 		const posZ_ = Symbol("posZ");
-		const EntityType = {
-			box = "box",
-			circle="circle",
-			cone="cone",
-			cylinder="cylinder",
-			dodecahedron="dodecahedron",
-			octahedron="octahedron",
-			plane="plane",
-			ring="ring",
-			sphere="sphere",
-			tetrahedron="tetrahedron",
-			torus="torus",
-			torusKnot="torusKnot",
-			triangle="triangle"
-		}
 
 		this[id_] = id;
 		this[element_] = document.createElement('a-entity');
