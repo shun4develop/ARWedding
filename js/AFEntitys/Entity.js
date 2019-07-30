@@ -1,7 +1,7 @@
 //####################################################
 //A-Frameオブジェクトのスーパークラス的なやつ
 //####################################################
-export class AFEntity{
+class AFEntity{
 
 	const id_ = Symbol("id");
 	const element_ = Symbol("element");
