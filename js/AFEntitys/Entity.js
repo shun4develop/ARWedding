@@ -1,6 +1,9 @@
+"use strict";
+
 //####################################################
 //A-Frameオブジェクトのスーパークラス的なやつ
 //####################################################
+
 class AFEntity{
 
 	const id_ = Symbol("id");
@@ -26,6 +29,10 @@ class AFEntity{
 	}
 
 	constructor(id) {
+
+
+
+
 		this[id_] = id;
 		this[element_] = document.createElement('a-entity');
 		this[element_].setAttribute("id",id);
