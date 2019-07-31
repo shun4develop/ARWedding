@@ -19,7 +19,6 @@ var AFEntity = function(id,type){
   this.element.setAttribute('id',id);
   this.element.setAttribute('geometry',"primitive: "+type);
   this.element.setAttribute('shadow','receive: true');
-  =
 };
 AFEntity.prototype.SetAttr = function(key,val){
   this.element.setAttribute(key, val);
