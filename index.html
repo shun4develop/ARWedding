@@ -11,7 +11,7 @@
 <body style='margin: 0; overflow: hidden;'>
 
 <!-- シーンの追加とデバックUIを非表示 -->
-<a-scene id="a-scene" embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false" registerevents> 
+<a-scene id="a-scene" embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false" light="defaultLightsEnabled: false" registerevents> 
   <a-assets>
     <!-- 画像をプリロード -->
     <img id="cat" src="markers/img/black_cat.jpg">
@@ -44,6 +44,10 @@
 
   <!-- カメラオブジェクトの配置 -->
   <a-camera-static/>
+  <a-light type="ambient" intensity="0.7" color="#ffffff"></a-light>
+  <a-light intensity="3" color="#00ffff" position="-5.72 6.65 0.80" animation__color="property:color; dir:alternate; dur:2000; easing:easeInOutSine; loop:true; to:#ff0000" alongpath="path:10,10,-10 -20,10,-10 10,0,-10; closed:true; dur:12000"></a-light>
+  <a-light intensity="5" color="#ff0000" position="8.60 6.65 0.80" animation__color="property:color; dir:alternate; dur:2000; easing:easeInOutSine; loop:true; to:#0000ff" alongpath="path:-2,-2,5 2,-1,5 0,-1,5; closed:true; dur:3000;"></a-light>
+    
 </a-scene>
 <script type="text/javascript" src="js/objects.js"></script>
 </body>
