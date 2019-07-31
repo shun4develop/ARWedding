@@ -1,48 +1,26 @@
 "use strict";
-
-//####################################################
-//A-Frameオブジェクトのスーパークラス的なやつ
-//####################################################
-
-class AFEntity{
-
-	constructor(id) {
-
-		const id_ = Symbol("id");
-		const element_ = Symbol("element");
-		const posX_ = Symbol("posX");
-		const posY_ = Symbol("posY");
-		const posZ_ = Symbol("posZ");
-
-		this[id_] = id;
-		this[element_] = document.createElement('a-entity');
-		this[element_].setAttribute("id",id);
-	}
-
-	get id(){
-		return this[id_];
-	}
-	get element(){
-		return this[element_];
-	}
-
-	SetAttr(key,val){
-		this[element_].setAttribute(key, val);
-	}
-
-	SetPos(x,y,z){
-		this.SetAttr("position",x + " " + y + " " + z);
-	}
-
-	GetAttr(){
-		return this[element_].getAttribute(key);
-	}
-
-	GetElement(){
-		this[element_];
-	}
-
-	AppendChild(){
-		this[element_].appendChild(element);
-	}
-}
+var AFEntity = function(id,type){
+	this.id = id;
+	this.type = type;
+	this.positionX = 0;
+	this.positionY = 0;
+	this.positionZ = 0;
+	this.rotationX = 0;
+	this.rotationY = 0;
+	this.rotationZ = 0;
+	this.element = document.createElement('a-entity');
+	this.element.setAttribute('id',id);
+	this.element.setAttribute('geometry',"primitive: "+type);
+};
+AFEntity.prototype.SetAttr = function(key,val){
+	this.element.setAttribute(key, val);
+};
+AFEntity.prototype.SetPos = function(x,y,z){
+	this.SetAttr("position",x + " " + y + " " + z);
+};
+AFEntity.prototype.GetAttr = function(key){
+	return this.element.getAttribute(key);
+};
+AFEntity.prototype.AppendChild = function(){
+	this.element.appendChild(element);
+};

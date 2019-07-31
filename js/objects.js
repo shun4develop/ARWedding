@@ -1,51 +1,44 @@
-//####################################################
-//A-Frameオブジェクトのスーパークラス的なやつ
-//####################################################
-const AFEntity = (function(){
-  const id_ = Symbol("id");
-  const element_ = Symbol("element");
-  const posX_ = Symbol("posX");
-  const posY_ = Symbol("posY");
-  const posZ_ = Symbol("posZ");
-  return class{
-    constructor(id) {
-      this[id_] = id;
-      this[element_] = document.createElement('a-entity');
-      this[element_].setAttribute("id",id);
-    }
-
-    get id(){
-      return this[id_];
-    }
-    get element(){
-      return this[element_];
-    }
-
-    SetAttr(key,val){
-      this[element_].setAttribute(key, val);
-    }
-
-    SetPos(x,y,z){
-      this.SetAttr("position",x + " " + y + " " + z);
-    }
-
-    GetAttr(){
-      return this[element_].getAttribute(key);
-    }
-
-    GetElement(){
-      this[element_];
-    }
-
-    AppendChild(){
-      this[element_].appendChild(element);
-    }
+function getRandomColor() {
+  let letters = '0123456789abcdef';
+  let randomColor = '';
+  for (let i = 0; i < 6; i++) {
+    randomColor += letters[Math.floor(Math.random() * 16)];
   }
-})();
+  return randomColor;
+}
+var AFEntity = function(id,type){
+  this.id = id;
+  this.type = type;
+  this.positionX = 0;
+  this.positionY = 0;
+  this.positionZ = 0;
+  this.rotationX = 0;
+  this.rotationY = 0;
+  this.rotationZ = 0;
+  this.element = document.createElement('a-entity');
+  this.element.setAttribute('id',id);
+  this.element.setAttribute('geometry',"primitive: "+type);
+};
+AFEntity.prototype.SetAttr = function(key,val){
+  this.element.setAttribute(key, val);
+};
+AFEntity.prototype.SetPos = function(x,y,z){
+  this.SetAttr("position",x + " " + y + " " + z);
+};
+AFEntity.prototype.GetAttr = function(key){
+  return this.element.getAttribute(key);
+};
+AFEntity.prototype.AppendChild = function(){
+  this.element.appendChild(element);
+};
 
-const e = new AFEntity("test");
-console.log(e.GetElement());  
+let objectContainer = document.querySelector('#object-container');
 
+function generateObject(){
+  var obj = new AFEntity("test","sphere");
+  objectContainer.appendChild(obj.element);
+}
+generateObject();
 
 /*
 let scene = document.querySelector('#a-scene');
@@ -57,14 +50,7 @@ function getRandomNumber(x, y) {
 }
 
 // get random hex color
-function getRandomColor() {
-  let letters = '0123456789abcdef';
-  let randomColor = '';
-  for (let i = 0; i < 6; i++) {
-    randomColor += letters[Math.floor(Math.random() * 16)];
-  }
-  return randomColor;
-}
+
 
 // change this value for more or less rings
 let totalRingElements = 10;
