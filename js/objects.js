@@ -41,14 +41,29 @@ var AFObjectModel = function(id,model,material){
   this.element.setAttribute("mtl",material);
 };
 
+//Animation
+var AFAnimation = function(mode,animationProperty){
+  this.mode = mode;
+  var propertys = "property:"+this.mode+";";
+  for(var key in animationProperty) {
+    propertys += key + ":" + animationProperty[key] + ";"
+  }
+  this.element.setAttribute("animation",propertys);
+}
+
 let objectContainer = document.querySelector('#object-container');
 
 function generateObject(){
   var entity = new AFEntity("test","sphere");
   var obj1 = new AFObjectModel("test2","#crate-obj","#crate-mtl");
-  obj1.element.setAttribute("position","0 1 0");
+
+  var animDic1 = {from:"0 0 0",to:"0 360 0",loop:"true",easing:"linear"};
+  var anim1 = new AFAnimation("rotation",animDic1);
+  
+  obj1.element.appendChild(anim1.element);
   objectContainer.appendChild(obj1.element);
 }
+
 generateObject();
 
 /*
