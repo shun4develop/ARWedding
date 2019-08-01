@@ -54,8 +54,10 @@ var AFAnimation = function(mode,animationProperty){
 let objectContainer = document.querySelector('#object-container');
 
 function generateObject(){
-  
-  var obj1 = new AFObjectModel("test2","./resouces/earth.glb");
+  gltf-model="src: url(./assets/model/text.gltf);"
+
+  var obj1 = new AFEntity("test2","");
+  obj1.SetAttr("gltf-model","src: url(./resouces/earth.glb);")
   
   objectContainer.appendChild(obj1.element);
 }
