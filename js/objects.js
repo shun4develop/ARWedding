@@ -58,7 +58,7 @@ function generateObject(){
   var entity = new AFEntity("test","sphere");
   var obj1 = new AFObjectModel("test2","#crate-obj","#crate-mtl");
 
-  var animDic1 = {to:"360",loop:"true",easing:"linear",autoplay="true"};
+  var animDic1 = {to:"360",loop:"true",easing:"linear",autoplay:"true"};
   var anim1 = new AFAnimation("object3D.rotationZ",animDic1);
   
   obj1.element.setAttribute("rotaion","0 90 0");
