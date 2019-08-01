@@ -61,6 +61,7 @@ function generateObject(){
   var anim1 = new AFAnimation("position",animDic1);
   
   obj1.element.setAttribute("rotaion","90 90 90");
+  obj1.element.setAttribute("scale","0.5 0.5 0.5");
   obj1.element.setAttribute("position","0 1 0");
   obj1.element.setAttribute("animation",anim1.propertys);
 
