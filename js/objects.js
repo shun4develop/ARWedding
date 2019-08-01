@@ -40,15 +40,12 @@ var AFObjectModel = function(id,model,material){
   this.element.setAttribute("src",model);
   this.element.setAttribute("mtl",material);
 };
-AFObjectModel.prototype.SetAttr = function(key,val){
-  this.element.setAttribute(key, val);
-};
 
 let objectContainer = document.querySelector('#object-container');
 
 function generateObject(){
   var entity = new AFEntity("test","sphere");
-  var obj1 = new AFObjectModel("test2","../resouces/earth.obj","../resouces/earth.mtl");
+  var obj1 = new AFObjectModel("test2","#crate-obj","#crate-mtl");
   objectContainer.appendChild(obj1.element);
 }
 generateObject();
