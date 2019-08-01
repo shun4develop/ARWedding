@@ -33,11 +33,23 @@ AFEntity.prototype.AppendChild = function(){
   this.element.appendChild(element);
 };
 
+//OBJ
+var AFObjectModel = function(id,model,material){
+  this.element = document.createElement('a-obj-model');
+  this.element.setAttribute("id",id);
+  this.element.setAttribute("src",model);
+  this.element.setAttribute("mtl",material);
+};
+AFObjectModel.prototype.SetAttr = function(key,val){
+  this.element.setAttribute(key, val);
+};
+
 let objectContainer = document.querySelector('#object-container');
 
 function generateObject(){
-  var obj = new AFEntity("test","sphere");
-  objectContainer.appendChild(obj.element);
+  var entity = new AFEntity("test","sphere");
+  var obj1 = new AFObjectModel("test2","../resouces/earth.obj","../resouces/earth.mtl");
+  objectContainer.appendChild(obj1.element);
 }
 generateObject();
 
