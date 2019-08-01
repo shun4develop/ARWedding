@@ -45,9 +45,9 @@ var AFObjectModel = function(id,model,material){
 var AFAnimation = function(mode,animationProperty){
   this.mode = mode;
 
-  var propertys = "property:"+this.mode+";";
+  this.propertys = "property:"+this.mode+";";
   for(var key in animationProperty) {
-    propertys += key + ":" + animationProperty[key] + ";"
+    this.propertys += key + ":" + animationProperty[key] + ";"
   }
   //this.element.setAttribute("animation",propertys);
 }
