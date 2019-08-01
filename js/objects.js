@@ -44,9 +44,10 @@ var AFObjectModel = function(id,model,material){
 //Animation
 var AFAnimation = function(mode,animationProperty){
   this.mode = mode;
-  this.propertys = "property:"+this.mode+";";
+  this.element = document.createElement('a-animation');
+  this.element.setAttribute("attribute",mode)
   for(var key in animationProperty) {
-    this.propertys += key + ":" + animationProperty[key] + ";"
+    this.element.setAttribute(key,animationProperty[key]);
   }
   //this.element.setAttribute("animation",propertys);
 }
@@ -57,13 +58,10 @@ function generateObject(){
   var entity = new AFEntity("test","sphere");
   var obj1 = new AFObjectModel("test2","#crate-obj","#crate-mtl");
 
-  var animDic1 = {to:"0 0 1",loop:"true",easing:"linear",autoplay:"true"};
-  var anim1 = new AFAnimation("position",animDic1);
+  var animDic1 = {to:"0 360 0",repeat:"indefinite"};
+  var anim1 = new AFAnimation("rotaion",animDic1);
   
-  obj1.element.setAttribute("rotaion","90 90 90");
-  obj1.element.setAttribute("scale","0.5 0.5 0.5");
-  obj1.element.setAttribute("position","0 1 0");
-  obj1.element.setAttribute("animation",anim1.propertys);
+  obj1.element.appendChild(anim1.element);
 
   objectContainer.appendChild(obj1.element);
 }
