@@ -44,11 +44,12 @@ var AFObjectModel = function(id,model,material){
 //Animation
 var AFAnimation = function(mode,animationProperty){
   this.mode = mode;
+
   var propertys = "property:"+this.mode+";";
   for(var key in animationProperty) {
     propertys += key + ":" + animationProperty[key] + ";"
   }
-  this.element.setAttribute("animation",propertys);
+  //this.element.setAttribute("animation",propertys);
 }
 
 let objectContainer = document.querySelector('#object-container');
@@ -60,7 +61,8 @@ function generateObject(){
   var animDic1 = {from:"0 0 0",to:"0 360 0",loop:"true",easing:"linear"};
   var anim1 = new AFAnimation("rotation",animDic1);
   
-  obj1.element.appendChild(anim1.element);
+  obj1.element.setAttribute("animation",anim1.propertys);
+
   objectContainer.appendChild(obj1.element);
 }
 
