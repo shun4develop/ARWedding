@@ -46,6 +46,7 @@ let objectContainer = document.querySelector('#object-container');
 function generateObject(){
   var entity = new AFEntity("test","sphere");
   var obj1 = new AFObjectModel("test2","#crate-obj","#crate-mtl");
+  obj1.element.setAttribute("position","0 1 0");
   objectContainer.appendChild(obj1.element);
 }
 generateObject();
