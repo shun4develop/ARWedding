@@ -44,7 +44,6 @@ var AFObjectModel = function(id,model,material){
 //Animation
 var AFAnimation = function(mode,animationProperty){
   this.mode = mode;
-
   this.propertys = "property:"+this.mode+";";
   for(var key in animationProperty) {
     this.propertys += key + ":" + animationProperty[key] + ";"
@@ -61,7 +60,7 @@ function generateObject(){
   var animDic1 = {to:"0 0 360",loop:"true",easing:"linear",autoplay:"true"};
   var anim1 = new AFAnimation("rotaion",animDic1);
   
-  obj1.element.setAttribute("rotaion","90 0 0");
+  obj1.element.setAttribute("rotaion","90 90 90");
   obj1.element.setAttribute("animation",anim1.propertys);
 
   objectContainer.appendChild(obj1.element);
