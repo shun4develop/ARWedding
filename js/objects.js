@@ -54,8 +54,8 @@ var AFAnimation = function(mode,animationProperty){
 let objectContainer = document.querySelector('#object-container');
 
 function generateObject(){
-  var entity = new AFEntity("test","sphere");
-  var obj1 = new AFObjectModel("test2","#crate-obj");
+  
+  var obj1 = new AFObjectModel("test2","./resouces/earth.glb");
   
   objectContainer.appendChild(obj1.element);
 }
