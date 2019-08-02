@@ -2,8 +2,7 @@
 <html>
 <head>
     <!-- A-Frame ライブラリの読み込み -->
-    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.2.0/dist/aframe-extras.min.js"></script>
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
     <!-- AR.js ライブラリの読み込み -->
     <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
     <script src="js/main.js" type="text/javascript" charset="utf-8" async defer></script>
@@ -18,12 +17,14 @@
     <img id="cat" src="markers/img/black_cat.jpg">
     <img id="wedding" src="markers/img/wedding.jpg">
     <video id="movie1" playsinline muted="true" src="resouces/wedding.mp4"></video>
+    <a-asset-item id="crate-obj" src="./resouces/earth.obj"></a-asset-item>
+    <a-asset-item id="crate-mtl" src="./resouces/earth.mtl"></a-asset-item>
   </a-assets>
   
   <!-- a-markerのtypeにpatternを設定, 作ったpattファイルをurlにを指定 -->
   <a-marker id="black_cat" preset="custom" type="pattern" url="markers/black_cat.patt">    
     <!-- 赤い立方体を表示 -->
-    <a-entity id="object-container" gltf-model="src: url(./resouces/earth.gltf);">
+    <a-entity id="object-container">
       
     </a-entity>
   </a-marker>

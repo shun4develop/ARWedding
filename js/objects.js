@@ -34,10 +34,11 @@ AFEntity.prototype.AppendChild = function(){
 };
 
 //OBJ
-var AFObjectModel = function(id,model){
-  this.element = document.createElement('a-gltf-model');
+var AFObjectModel = function(id,model,material){
+  this.element = document.createElement('a-obj-model');
   this.element.setAttribute("id",id);
   this.element.setAttribute("src",model);
+  this.element.setAttribute("mtl",material);
 };
 
 //Animation
@@ -54,10 +55,14 @@ var AFAnimation = function(mode,animationProperty){
 let objectContainer = document.querySelector('#object-container');
 
 function generateObject(){
+  var entity = new AFEntity("test","sphere");
+  var obj1 = new AFObjectModel("test2","#crate-obj","#crate-mtl");
 
-  var obj1 = new AFEntity("test2","");
-  obj1.element.setAttribute("gltf-model","src: url(./resouces/earth.glb);")
+  var animDic1 = {to:"0 360 0",repeat:"indefinite"};
+  var anim1 = new AFAnimation("rotaion",animDic1);
   
+  obj1.element.appendChild(anim1.element);
+
   objectContainer.appendChild(obj1.element);
 }
 
