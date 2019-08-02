@@ -56,7 +56,7 @@ let objectContainer = document.querySelector('#object-container');
 function generateObject(){
 
   var obj1 = new AFEntity("test2","");
-  obj1.SetAttr("gltf-model","src: url(./resouces/earth.glb.gtlf);")
+  obj1.SetAttr("gltf-model","src: url(./resouces/earth.glb.gltf);")
   
   objectContainer.appendChild(obj1.element);
 }
